@@ -1,4 +1,4 @@
-<psvg width="1300" height="320">
+<psvg width="1300" height="320" xmlns:xlink="http://www.w3.org/1999/xlink">
   <var COLS="30" ROWS="5" />
   <var MARGIN="6" />
   <var FOLLOWER_COUNT="__FOLLOWER_COUNT__" />
@@ -17,8 +17,8 @@
   <for row="0" true="{row<ROWS}" step="1">
     <for col="0" true="{col<COLS}" step="1">
       <if true="{(row*COLS)+col<FOLLOWER_COUNT}">
-        <a href="{NTH(LINK_LIST,(row*COLS)+col)}" target="_blank">
-          <image x="{col*(IMG_W+MARGIN)}" y="{row*(IMG_W+MARGIN)}" width="{IMG_W}" height="{IMG_W}" href="{NTH(AVATAR_LIST,(row*COLS)+col).replace('@', ',')}" />
+        <a xlink:href="{NTH(LINK_LIST,(row*COLS)+col)}" target="_blank">
+          <image x="{col*(IMG_W+MARGIN)}" y="{row*(IMG_W+MARGIN)}" width="{IMG_W}" height="{IMG_W}" xlink:href="{NTH(AVATAR_LIST,(row*COLS)+col).replace('@', ',')}" />
         </a>
       </if>
     </for>      
