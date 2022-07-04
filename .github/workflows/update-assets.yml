@@ -27,6 +27,6 @@ jobs:
         uses: EndBug/add-and-commit@v4
         with:
           message: "chore: update followers.svg"
-          add: "followers.*"
+          add: "assets/followers.*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
