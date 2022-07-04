@@ -1,8 +1,10 @@
 import { promises as fs } from 'fs'
 import path from 'path'
+import { $fetch } from 'ohmyfetch'
 import { request } from '@octokit/request'
 import { compilePSVG } from '@lingdong/psvg'
 import imageDataURI from 'image-data-uri'
+import sharp from 'sharp'
 
 interface RawFollower {
   login: string
@@ -16,8 +18,19 @@ interface Follower {
   avatar: string
 }
 
+function toBuffer(ab: ArrayBuffer) {
+  const buf = Buffer.alloc(ab.byteLength)
+  const view = new Uint8Array(ab)
+  for (let i = 0; i < buf.length; ++i)
+    buf[i] = view[i]
+
+  return buf
+}
+
 const fetchUserData = async (user: RawFollower) => {
-  const avatar = await imageDataURI.encodeFromURL(user.avatar_url)
+  const avatarData = await $fetch(user.avatar_url, { responseType: 'arrayBuffer' })
+  const sharpImgData = await sharp(toBuffer(avatarData)).resize(60, 60).png({ quality: 80, compressionLevel: 8 }).toBuffer()
+  const avatar = await imageDataURI.encode(sharpImgData, 'PNG')
   const result: Follower = {
     username: user.login,
     url: user.html_url,

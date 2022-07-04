@@ -5,14 +5,14 @@
   <var AVATAR_LIST="__AVATAR_LIST__" />
   <var LINK_LIST="__LINK_LIST__" />
 
-  <var IMG_W="{(WIDTH-40)/COLS-MARGIN}" />
+  <var IMG_W="{WIDTH/COLS-MARGIN}" />
 
   <font family="sans-serif" weight="medium" size="24" anchor="start"/>
-  <text x="20" y="40">
+  <text x="0" y="40">
     Thanks for all __FOLLOWER_COUNT__ followers!
   </text>
 
-  <translate x="20" y="60"/>
+  <translate x="0" y="60"/>
 
   <for row="0" true="{row<ROWS}" step="1">
     <for col="0" true="{col<COLS}" step="1">
@@ -25,7 +25,7 @@
   </for>
 
   <font family="sans-serif" weight="lighter" size="12" anchor="end"/>
-  <text x="{WIDTH-46}" y="240" opacity="0.5">
+  <text x="{WIDTH}" y="240" opacity="0.5">
     UPDATED AT __CURRENT_TIME__
   </text>
 </psvg>
