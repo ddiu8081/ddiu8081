@@ -1,0 +1,20 @@
+{
+  "name": "ddiu8081",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lingdong/psvg": "^0.0.2",
+    "@octokit/request": "^5.6.3",
+    "image-data-uri": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.1"
+  }
+}
