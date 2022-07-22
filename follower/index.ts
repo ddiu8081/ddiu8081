@@ -36,7 +36,8 @@ const fetchUserData = async (user: RawFollower) => {
     url: user.html_url,
     avatar,
   }
-  console.log(`fetched ${user.login}`)
+  const isSuccess = avatar ? true : false
+  console.log(`fetched ${user.login} ${isSuccess ? 'success' : 'fail'}`)
   return result
 }
 
@@ -47,6 +48,7 @@ const getFollowers = async (username: string) => {
     console.log(`fetching page ${page}`)
     const response = await request(`GET /users/${username}/followers`, { page, per_page: 100 })
     rawFollowers = rawFollowers.concat(response.data)
+    console.log(`fetched ${response.data.length} users`)
     if (response.headers.link) {
       const link = response.headers.link
       if (link.includes('rel="next"')) {

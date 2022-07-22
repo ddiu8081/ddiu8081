@@ -1,5 +1,5 @@
 <psvg width="1300" height="360" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <var COLS="30" ROWS="5" />
+  <var COLS="30" ROWS="{CEIL(__FOLLOWER_COUNT__/30)}" />
   <var MARGIN="6" />
   <var FOLLOWER_COUNT="__FOLLOWER_COUNT__" />
   <var AVATAR_LIST="__AVATAR_LIST__" />
@@ -8,7 +8,7 @@
   <var IMG_W="{WIDTH/COLS-MARGIN}" />
 
   <font family="sans-serif" weight="medium" size="24" anchor="start"/>
-  <text x="0" y="40">
+  <text x="0" y="40" fill="#777777">
     Thanks for all __FOLLOWER_COUNT__ followers!
   </text>
 
@@ -25,7 +25,7 @@
   </for>
 
   <font family="sans-serif" weight="lighter" size="12" anchor="end"/>
-  <text x="{WIDTH}" y="280" opacity="0.5">
+  <text x="{WIDTH}" y="280" opacity="0.5" fill="#777777">
     UPDATED AT __CURRENT_TIME__
   </text>
 </psvg>
