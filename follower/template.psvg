@@ -1,4 +1,4 @@
-<psvg width="1300" height="320" xmlns:xlink="http://www.w3.org/1999/xlink">
+<psvg width="1300" height="360" xmlns:xlink="http://www.w3.org/1999/xlink">
   <var COLS="30" ROWS="5" />
   <var MARGIN="6" />
   <var FOLLOWER_COUNT="__FOLLOWER_COUNT__" />
@@ -25,7 +25,7 @@
   </for>
 
   <font family="sans-serif" weight="lighter" size="12" anchor="end"/>
-  <text x="{WIDTH}" y="240" opacity="0.5">
+  <text x="{WIDTH}" y="280" opacity="0.5">
     UPDATED AT __CURRENT_TIME__
   </text>
 </psvg>
