@@ -45,7 +45,7 @@ const getFollowers = async (username: string) => {
   let rawFollowers: RawFollower[] = []
   while (true && page < 50) {
     console.log(`fetching page ${page}`)
-    const response = await request(`GET /users/${username}/followers`, { page })
+    const response = await request(`GET /users/${username}/followers`, { page, per_page: 100 })
     rawFollowers = rawFollowers.concat(response.data)
     if (response.headers.link) {
       const link = response.headers.link
