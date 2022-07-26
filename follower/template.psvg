@@ -22,7 +22,7 @@
   </for>
 
   <font family="sans-serif" weight="lighter" size="12" anchor="end"/>
-  <text x="{WIDTH}" y="280" opacity="0.5" fill="#777777">
+  <text x="{WIDTH}" y="280" opacity="0.9" fill="#777777">
     UPDATED AT __CURRENT_TIME__
   </text>
 </psvg>

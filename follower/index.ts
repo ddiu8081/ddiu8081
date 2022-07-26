@@ -29,7 +29,7 @@ function toBuffer(ab: ArrayBuffer) {
 
 const fetchUserData = async (user: RawFollower) => {
   const avatarData = await $fetch(user.avatar_url, { responseType: 'arrayBuffer' })
-  const sharpImgData = await sharp(toBuffer(avatarData)).resize(60, 60).png({ quality: 80, compressionLevel: 8 }).toBuffer()
+  const sharpImgData = await sharp(toBuffer(avatarData)).resize(60, 60).blur(20).png({ quality: 80, compressionLevel: 8 }).toBuffer()
   const avatar = await imageDataURI.encode(sharpImgData, 'PNG')
   const result: Follower = {
     username: user.login,
