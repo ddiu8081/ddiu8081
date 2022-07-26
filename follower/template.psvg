@@ -1,17 +1,17 @@
-<psvg width="1300" height="360" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <var COLS="30" ROWS="{CEIL(__FOLLOWER_COUNT__/30)}" />
-  <var MARGIN="6" />
+<psvg width="1300" height="170" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <var COLS="50" ROWS="{CEIL(__FOLLOWER_COUNT__/30)}" />
+  <var MARGIN="4" />
   <var FOLLOWER_COUNT="__FOLLOWER_COUNT__" />
   <var AVATAR_LIST="__AVATAR_LIST__" />
 
   <var IMG_W="{WIDTH/COLS-MARGIN}" />
 
   <font family="sans-serif" weight="medium" size="24" anchor="start"/>
-  <text x="0" y="40" fill="#777777">
+  <text x="0" y="20" fill="#777777">
     Thanks for all __FOLLOWER_COUNT__ followers!
   </text>
 
-  <translate x="0" y="60"/>
+  <translate x="0" y="40"/>
 
   <for row="0" true="{row<ROWS}" step="1">
     <for col="0" true="{col<COLS}" step="1">
@@ -22,7 +22,7 @@
   </for>
 
   <font family="sans-serif" weight="lighter" size="12" anchor="end"/>
-  <text x="{WIDTH}" y="280" opacity="0.9" fill="#777777">
+  <text x="{WIDTH}" y="{HEIGHT-50}" fill="#777777">
     UPDATED AT __CURRENT_TIME__
   </text>
 </psvg>
