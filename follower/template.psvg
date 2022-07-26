@@ -3,7 +3,6 @@
   <var MARGIN="6" />
   <var FOLLOWER_COUNT="__FOLLOWER_COUNT__" />
   <var AVATAR_LIST="__AVATAR_LIST__" />
-  <var LINK_LIST="__LINK_LIST__" />
 
   <var IMG_W="{WIDTH/COLS-MARGIN}" />
 
@@ -17,9 +16,7 @@
   <for row="0" true="{row<ROWS}" step="1">
     <for col="0" true="{col<COLS}" step="1">
       <if true="{(row*COLS)+col<FOLLOWER_COUNT}">
-        <a xlink:href="{NTH(LINK_LIST,(row*COLS)+col)}" target="_blank">
-          <image x="{col*(IMG_W+MARGIN)}" y="{row*(IMG_W+MARGIN)}" width="{IMG_W}" height="{IMG_W}" xlink:href="{NTH(AVATAR_LIST,(row*COLS)+col).replace('@', ',')}" />
-        </a>
+        <image x="{col*(IMG_W+MARGIN)}" y="{row*(IMG_W+MARGIN)}" width="{IMG_W}" height="{IMG_W}" xlink:href="{NTH(AVATAR_LIST,(row*COLS)+col).replace('@', ',')}" />
       </if>
     </for>      
   </for>

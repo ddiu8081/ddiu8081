@@ -72,7 +72,6 @@ const generateSvg = async (list: Follower[]) => {
 
   template = template.replace(/__FOLLOWER_COUNT__/g, list.length.toString())
   template = template.replace(/__AVATAR_LIST__/g, list.map(item => item.avatar.replace(',', '@')).join(' '))
-  template = template.replace(/__LINK_LIST__/g, list.map(item => item.url).join(' '))
   template = template.replace(/__CURRENT_TIME__/g, new Date().toUTCString())
 
   const transformedSvg = compilePSVG(template)
