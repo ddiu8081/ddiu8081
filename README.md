@@ -1,6 +1,4 @@
-### Hi there 👋
-
-**I'm Diu** / Front-end developer / Amateur designer.
+**I'm Diu** 👋 / Front-end developer / Amateur designer.
 
 Visit my [website](https://ddiu.io) / [blog](https://notes.ljl.li)
 
